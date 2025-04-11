@@ -19397,59 +19397,64 @@
                   }),
                 ],
               });
-      var ed = ({ onClose: e, supported: t, gameHasBegun: i, loadProgress: s }) =>
-          Object(Ul.jsxs)("div", {
-            id: "splash-container",
-            children: [
-              Fi && Object(Ul.jsx)(Kl, {}),
-              Object(Ul.jsxs)("div", {
-                id: "home",
+        var ed = ({ onClose: e, supported: t, gameHasBegun: i, loadProgress: s }) =>
+            Object(Ul.jsxs)("div", {
+                id: "splash-container",
                 children: [
-                  // Optional: version
-                  Object(Ul.jsx)("div", {
-                    id: "splash-version",
-                    children: Ui,
-                  }),
+                    Fi && Object(Ul.jsx)(Kl, {}),
+                    Object(Ul.jsxs)("div", {
+                        id: "home",
+                        children: [
+                            Object(Ul.jsx)("div", {
+                                id: "splash-version",
+                                children: Ui,
+                            }),
+                            Object(Ul.jsx)("div", { id: "splash-logo-placeholder" }),
+                            Object(Ul.jsx)("img", {
+                                id: "splash-logo",
+                                src: Yl,
+                                alt: "",
+                            }),
+                            Object(Ul.jsx)("div", {
+                                id: "splash-header",
+                                children: "Fast Roads",
+                            }),
+                            Object(Ul.jsx)("div", {
+                                id: "splash-subheader",
+                                children: "custom high-speed zen",
+                            }),
+                            t
+                                ? Object(Ul.jsx)(_l, {
+                                    loadProgress: s,
+                                    gameHasBegun: i,
+                                    onBegin: e,
+                                })
+                                : Object(Ul.jsx)($l, {}),
 
-                  // Removed anslo credit
+                            Object(Ul.jsx)("div", {
+                                id: "splash-distance",
+                                className: "splash-footer",
+                                children:
+                                    Pr.value == null
+                                        ? "ready to ride?"
+                                        : `you've driven ${Math.floor(Pr.value / 1e3)} km`,
+                            }),
 
-                  Object(Ul.jsx)("div", { id: "splash-logo-placeholder" }),
-                  Object(Ul.jsx)("img", {
-                    id: "splash-logo",
-                    src: Yl,
-                    alt: "",
-                  }),
-                  Object(Ul.jsx)("div", {
-                    id: "splash-header",
-                    children: "Fast Roads", // your new game name
-                  }),
-                  Object(Ul.jsx)("div", {
-                    id: "splash-subheader",
-                    children: "custom high-speed zen",
-                  }),
+                            // 👇 New "coded by TeNz" footer
+                            Object(Ul.jsx)("div", {
+                                id: "splash-credits",
+                                className: "flicker-in-2",
+                                children: [
+                                    Object(Ul.jsx)("span", { className: "coded", children: "Coded by " }),
+                                    Object(Ul.jsx)("span", { className: "tenz", children: "TeNz ⚡" })
+                                ]
+                            }),
 
-                  // Begin game button
-                  t
-                      ? Object(Ul.jsx)(_l, {
-                        loadProgress: s,
-                        gameHasBegun: i,
-                        onBegin: e,
-                      })
-                      : Object(Ul.jsx)($l, {}),
-
-                  // Clean footer
-                  Object(Ul.jsx)("div", {
-                    id: "splash-distance",
-                    className: "splash-footer",
-                    children:
-                        Pr.value == null
-                            ? "ready to ride?"
-                            : `you've driven ${Math.floor(Pr.value / 1e3)} km`,
-                  }),
+                        ],
+                    }),
                 ],
-              }),
-            ],
-          });
+            });
+
 
 // ✅ Fix crash: properly define the image constants
       const td = i.p + "static/media/lock_open.2037b97e.svg";
